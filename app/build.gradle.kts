@@ -108,4 +108,6 @@ dependencies {
     implementation(libs.androidx.viewpager2)
 
     implementation(libs.kotlinx.coroutines.play.services)
+
+    implementation(libs.dotsindicator)
 }
