@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.travelappandroid.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_placeDetailFragment"
+            app:destination="@id/placeDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_exploreFragment2"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_itineraryFragment2"
+            app:destination="@id/itineraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeDetailFragment"
+        android:name="com.example.travelappandroid.ui.detail.PlaceDetailFragment"
+        android:label="fragment_place_detail"
+        tools:layout="@layout/fragment_place_detail" />
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.travelappandroid.ui.explore.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/itineraryFragment"
+        android:name="com.example.travelappandroid.ui.itinerary.ItineraryFragment"
+        android:label="fragment_itinerary"
+        tools:layout="@layout/fragment_itinerary" />
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.travelappandroid.ui.food.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" />
+</navigation>

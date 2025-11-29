@@ -8,4 +8,7 @@
     <color name="primary_light">#E2F2F8</color>
     <color name="gray">#808080</color>
     <color name="gray_light">#EDEDED</color>
+    <color name="chip_bg">#F8F8F8</color>
+    <color name="chip_border">#DDDDDD</color>
+    <color name="chip_text">#333333</color>
 </resources>

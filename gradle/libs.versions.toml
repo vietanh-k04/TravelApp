@@ -35,6 +35,7 @@ firebaseFirestoreKtx = "25.1.4"
 firebaseAuthKtx = "23.2.1"
 firebaseMessagingKtx = "24.1.2"
 recyclerview = "1.4.0"
+fragment = "1.8.9"
 
 [libraries]
 #noinspection SimilarGradleDependency
@@ -90,6 +91,7 @@ play-services-location = { module = "com.google.android.gms:play-services-locati
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

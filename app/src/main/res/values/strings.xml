@@ -3,4 +3,11 @@
     <string name="home_hint_welcome">Khám phá Việt Nam</string>
     <string name="home_hint_description">Những nơi tuyệt vời dành cho bạn</string>
     <string name="home_hint_trending_places">Đang thịnh hành</string>
+    <string name="home_hint_region">Khu vực</string>
+    <string name="home_hint_recommend">Gợi ý cho bạn</string>
+    <string name="home_hint_quick">Khám phá nhanh</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_food">Food</string>
+    <string name="nav_itinerary">Plan</string>
 </resources>
