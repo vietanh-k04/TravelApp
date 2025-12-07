@@ -12,9 +12,11 @@ import com.example.travelappandroid.data.repository.BannerRepository
 import com.example.travelappandroid.data.repository.FoodRepository
 import com.example.travelappandroid.data.repository.ItineraryRepository
 import com.example.travelappandroid.data.repository.PlaceRepository
-import com.google.android.datatransport.runtime.dagger.Provides
-import jakarta.inject.Singleton
+import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
+@Module
 class RepositoryModule {
     @Provides
     @Singleton

@@ -1,7 +1,7 @@
 package com.example.travelappandroid.di
 
 import android.app.Application
-import com.example.travelappandroid.ui.MainActivity
+import com.example.travelappandroid.ui.main.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -22,7 +22,7 @@ interface AppComponent {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance app: Application): AppComponent
+        fun create(app: AppModule): AppComponent
     }
 
     fun inject(activity: MainActivity)

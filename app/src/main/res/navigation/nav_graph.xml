@@ -12,15 +12,6 @@
         <action
             android:id="@+id/action_homeFragment_to_placeDetailFragment"
             app:destination="@id/placeDetailFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_foodFragment"
-            app:destination="@id/foodFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_exploreFragment2"
-            app:destination="@id/exploreFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_itineraryFragment2"
-            app:destination="@id/itineraryFragment" />
     </fragment>
     <fragment
         android:id="@+id/placeDetailFragment"

@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "banners")
 data class BannerEntity(
-    @PrimaryKey val id: String? = null,
+    @PrimaryKey val id: String = "",
     val image: String? = null,
     val title: String? = null,
     val placeId: String? = null

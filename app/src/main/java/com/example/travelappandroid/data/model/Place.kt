@@ -1,7 +1,7 @@
 package com.example.travelappandroid.data.model
 
 data class Place(
-    val id: String? = null,
+    val id: String = "",
     val name: String? = null,
     val region: String? = null,
     val province: String? = null,

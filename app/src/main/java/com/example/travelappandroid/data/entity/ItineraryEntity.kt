@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "itineraries")
 data class ItineraryEntity(
-    @PrimaryKey val id: String? = null,
+    @PrimaryKey val id: String = "",
     val title: String? = null,
     val duration: String? = null,
     val placesJson: String? = null,

@@ -18,7 +18,7 @@ import com.example.travelappandroid.data.entity.PlaceEntity
         BannerEntity::class,
         ItineraryEntity::class ],
     version = 1,
-    exportSchema = true
+    exportSchema = false
 )
 abstract class AppDatabase() : RoomDatabase() {
     abstract fun placeDAO() : PlaceDAO

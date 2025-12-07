@@ -21,7 +21,7 @@ class RoomModule {
             app,
             AppDatabase::class.java,
             "travel_app.db" )
-            .fallbackToDestructiveMigration(false)  // Xoá DB cũ nếu nâng version
+            .fallbackToDestructiveMigration()  // Xoá DB cũ nếu nâng version
             .build()
     }
 
