@@ -14,43 +14,30 @@ import com.example.travelappandroid.data.repository.ItineraryRepository
 import com.example.travelappandroid.data.repository.PlaceRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class RepositoryModule {
+@InstallIn(SingletonComponent::class)
+object RepositoryModule {
     @Provides
     @Singleton
-    fun providePlaceRepository(
-        local: PlaceLocalDataSource,
-        remote: PlaceFirebaseDataSource
-    ): PlaceRepository {
-        return PlaceRepository(local, remote)
-    }
+    fun providePlaceRepository(local: PlaceLocalDataSource, remote: PlaceFirebaseDataSource)
+        = PlaceRepository(local, remote)
 
     @Provides
     @Singleton
-    fun provideFoodRepository(
-        local: FoodLocalDataSource,
-        remote: FoodFirebaseDataSource
-    ): FoodRepository {
-        return FoodRepository(local, remote)
-    }
+    fun provideFoodRepository(local: FoodLocalDataSource, remote: FoodFirebaseDataSource)
+        = FoodRepository(local, remote)
 
     @Provides
     @Singleton
-    fun provideBannerRepository(
-        local: BannerLocalDataSource,
-        remote: BannerFirebaseDataSource
-    ): BannerRepository {
-        return BannerRepository(local, remote)
-    }
+    fun provideBannerRepository(local: BannerLocalDataSource, remote: BannerFirebaseDataSource)
+        = BannerRepository(local, remote)
 
     @Provides
     @Singleton
-    fun provideItineraryRepository(
-        local: ItineraryLocalDataSource,
-        remote: ItineraryFirebaseDataSource
-    ): ItineraryRepository {
-        return ItineraryRepository(local, remote)
-    }
+    fun provideItineraryRepository(local: ItineraryLocalDataSource, remote: ItineraryFirebaseDataSource)
+        = ItineraryRepository(local, remote)
 }

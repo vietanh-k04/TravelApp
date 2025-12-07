@@ -1,5 +1,9 @@
 package com.example.travelappandroid.di
 
+import com.example.travelappandroid.data.dao.BannerDAO
+import com.example.travelappandroid.data.dao.FoodDAO
+import com.example.travelappandroid.data.dao.ItineraryDAO
+import com.example.travelappandroid.data.dao.PlaceDAO
 import com.example.travelappandroid.data.local.BannerLocalDataSource
 import com.example.travelappandroid.data.local.FoodLocalDataSource
 import com.example.travelappandroid.data.local.ItineraryLocalDataSource
@@ -9,41 +13,57 @@ import com.example.travelappandroid.data.remote.FoodFirebaseDataSource
 import com.example.travelappandroid.data.remote.ItineraryFirebaseDataSource
 import com.example.travelappandroid.data.remote.PlaceFirebaseDataSource
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
-import jakarta.inject.Singleton
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-class DataSourceModule {
+@InstallIn(SingletonComponent::class)
+object DataSourceModule {
     @Provides
     @Singleton
-    fun providePlaceLocal(local: PlaceLocalDataSource): PlaceLocalDataSource = local
+    fun provideGson(): Gson = Gson()
 
     @Provides
     @Singleton
-    fun provideFoodLocal(local: FoodLocalDataSource): FoodLocalDataSource = local
+    fun providePlaceLocal(ds: PlaceDAO, gson: Gson) =
+        PlaceLocalDataSource(ds, gson)
 
     @Provides
     @Singleton
-    fun provideBannerLocal(local: BannerLocalDataSource): BannerLocalDataSource = local
+    fun provideFoodLocal(ds: FoodDAO, gson: Gson) =
+        FoodLocalDataSource(ds, gson)
 
     @Provides
     @Singleton
-    fun provideItineraryLocal(local: ItineraryLocalDataSource): ItineraryLocalDataSource = local
+    fun provideBannerLocal(ds: BannerDAO) =
+        BannerLocalDataSource(ds)
 
     @Provides
     @Singleton
-    fun providePlaceRemote(firestore: FirebaseFirestore): PlaceFirebaseDataSource = PlaceFirebaseDataSource(firestore)
+    fun provideItineraryLocal(ds: ItineraryDAO, gson: Gson) =
+        ItineraryLocalDataSource(ds, gson)
 
     @Provides
     @Singleton
-    fun provideFoodRemote(firestore: FirebaseFirestore): FoodFirebaseDataSource = FoodFirebaseDataSource(firestore)
+    fun providePlaceRemote(firestore: FirebaseFirestore) =
+        PlaceFirebaseDataSource(firestore)
 
     @Provides
     @Singleton
-    fun provideBannerRemote(firestore: FirebaseFirestore): BannerFirebaseDataSource = BannerFirebaseDataSource(firestore)
+    fun provideFoodRemote(firestore: FirebaseFirestore) =
+        FoodFirebaseDataSource(firestore)
 
     @Provides
     @Singleton
-    fun provideItineraryRemote(firestore: FirebaseFirestore): ItineraryFirebaseDataSource = ItineraryFirebaseDataSource(firestore)
+    fun provideBannerRemote(firestore: FirebaseFirestore) =
+        BannerFirebaseDataSource(firestore)
+
+    @Provides
+    @Singleton
+    fun provideItineraryRemote(firestore: FirebaseFirestore) =
+        ItineraryFirebaseDataSource(firestore)
 }

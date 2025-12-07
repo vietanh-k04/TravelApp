@@ -1,24 +1,40 @@
 package com.example.travelappandroid.di
 
-import android.app.Application
 import android.content.Context
-import com.google.gson.Gson
+import androidx.room.Room
+import com.example.travelappandroid.data.database.AppDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class AppModule(private val app: Application) {
+@InstallIn(SingletonComponent::class)
+object AppModule {
 
+    // Firestore
     @Provides
     @Singleton
-    fun provideApplication(): Application = app
+    fun provideFirestore(): FirebaseFirestore = FirebaseFirestore.getInstance()
 
+    // Room database
     @Provides
     @Singleton
-    fun provideContext(): Context? = app.applicationContext
+    fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
+        Room.databaseBuilder(context, AppDatabase::class.java, "travel.db").build()
 
     @Provides
-    @Singleton
-    fun provideGson(): Gson = Gson()
+    fun providePlaceDao(db: AppDatabase) = db.placeDAO()
+
+    @Provides
+    fun provideFoodDao(db: AppDatabase) = db.FoodDAO()
+
+    @Provides
+    fun provideBannerDao(db: AppDatabase) = db.BannerDAO()
+
+    @Provides
+    fun provideItineraryDao(db: AppDatabase) = db.ItineraryDAO()
 }
