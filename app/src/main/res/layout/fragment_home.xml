@@ -28,6 +28,12 @@
 
         <include android:id="@+id/home_region"
             layout="@layout/home_region"/>
+
+        <include android:id="@+id/home_food"
+            layout="@layout/home_food"/>
+
+        <include android:id="@+id/home_itinerary"
+            layout="@layout/home_itinerary"/>
     </LinearLayout>
 
 

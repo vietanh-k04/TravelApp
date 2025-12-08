@@ -10,4 +10,6 @@
     <string name="nav_explore">Explore</string>
     <string name="nav_food">Food</string>
     <string name="nav_itinerary">Plan</string>
+    <string name="home_hint_itinerary">Gợi ý lịch trình</string>
+    <string name="home_hind_food">Khám phá ẩm thực</string>
 </resources>

@@ -17,7 +17,7 @@ import com.example.travelappandroid.data.entity.PlaceEntity
         FoodEntity::class,
         BannerEntity::class,
         ItineraryEntity::class ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase() : RoomDatabase() {

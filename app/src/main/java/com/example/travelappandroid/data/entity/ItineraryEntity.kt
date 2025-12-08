@@ -9,5 +9,6 @@ data class ItineraryEntity(
     val title: String? = null,
     val duration: String? = null,
     val placesJson: String? = null,
-    val description: String? = null
+    val description: String? = null,
+    val thumbnail: String? = null
 )

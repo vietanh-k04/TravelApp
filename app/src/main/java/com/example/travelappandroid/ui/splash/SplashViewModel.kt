@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.travelappandroid.data.repository.BannerRepository
+import com.example.travelappandroid.data.repository.FoodRepository
+import com.example.travelappandroid.data.repository.ItineraryRepository
 import com.example.travelappandroid.data.repository.PlaceRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,6 +16,8 @@ import javax.inject.Inject
 class SplashViewModel @Inject constructor(
     private val bannerRepository: BannerRepository,
     private val placeRepository: PlaceRepository,
+    private val foodRepository: FoodRepository,
+    private val itineraryRepository: ItineraryRepository
     ) : ViewModel() {
     private val _isDataReady = MutableLiveData<Boolean>()
     val isDataReady: LiveData<Boolean> = _isDataReady
@@ -22,6 +26,8 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch {
             bannerRepository.refreshBanners()
             placeRepository.refreshAllPlaces()
+            foodRepository.refreshFoods()
+            itineraryRepository.refreshItineraries()
             _isDataReady.postValue(true)
         }
     }

@@ -38,6 +38,6 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideItineraryRepository(local: ItineraryLocalDataSource, remote: ItineraryFirebaseDataSource)
-        = ItineraryRepository(local, remote)
+    fun provideItineraryRepository(local: ItineraryLocalDataSource, remote: ItineraryFirebaseDataSource, placeLocal: PlaceLocalDataSource)
+        = ItineraryRepository(local, remote, placeLocal)
 }
