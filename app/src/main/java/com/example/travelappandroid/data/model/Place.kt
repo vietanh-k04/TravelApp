@@ -1,5 +1,7 @@
 package com.example.travelappandroid.data.model
 
+import com.google.firebase.firestore.PropertyName
+
 data class Place(
     val id: String = "",
     val name: String? = null,
@@ -21,5 +23,8 @@ data class Place(
     val longitude: Double? = null,
 
     val rating: Double? = null,
-    val isTrending: Boolean? = null
+
+    @PropertyName("isTrending")
+    @get:PropertyName("isTrending")
+    val isTrending: Boolean = false,
 )

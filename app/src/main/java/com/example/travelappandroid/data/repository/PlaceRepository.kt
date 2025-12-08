@@ -1,5 +1,6 @@
 package com.example.travelappandroid.data.repository
 
+import android.media.Rating
 import com.example.travelappandroid.data.local.PlaceLocalDataSource
 import com.example.travelappandroid.data.model.Place
 import com.example.travelappandroid.data.remote.PlaceFirebaseDataSource
@@ -34,16 +35,12 @@ class PlaceRepository(private val local: PlaceLocalDataSource, private val remot
         return local.getPlaceById(id)
     }
 
-    // REFRESH: remote → local
-    suspend fun refreshAllPlaces() {
-        val list = remote.getAllPlaces()
-        if (list.isNotEmpty()) {
-            local.savePlaces(list)
-        }
+    suspend fun getRecommended(rating: Double) : List<Place> {
+        return local.getRecommended(rating)
     }
 
-    suspend fun refreshTrending() {
-        val list = remote.getTrendingPlaces()
+    suspend fun refreshAllPlaces() {
+        val list = remote.getAllPlaces()
         if (list.isNotEmpty()) {
             local.savePlaces(list)
         }

@@ -17,7 +17,7 @@ interface PlaceDAO {
     suspend fun getById(placeId: String): PlaceEntity
 
     // 3. Trending
-    @Query("SELECT * FROM places WHERE isTrending = 1")
+    @Query("SELECT * FROM places WHERE isTrending = 1 ORDER BY rating DESC")
     suspend fun getTrending(): List<PlaceEntity>
 
     // 4. Theo vùng (region)
@@ -43,4 +43,7 @@ interface PlaceDAO {
     // 9. Clear table
     @Query("DELETE FROM places")
     suspend fun clear()
+
+    @Query("SELECT * FROM places WHERE rating >= :rating ORDER BY rating DESC")
+    suspend fun getRecommended(rating: Double) : List<PlaceEntity>
 }

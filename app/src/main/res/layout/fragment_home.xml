@@ -14,15 +14,20 @@
         <include android:id="@+id/home_banner"
             layout="@layout/home_banner"/>
 
-        <include layout="@layout/home_quick_explore"/>
+        <include android:id="@+id/home_quick_explore"
+            layout="@layout/home_quick_explore"/>
 
-        <include layout="@layout/home_welcome"/>
+        <include android:id="@+id/home_welcome"
+            layout="@layout/home_welcome"/>
 
-        <include layout="@layout/home_recommend"/>
+        <include android:id="@+id/home_recommend"
+            layout="@layout/home_recommend"/>
 
-        <include layout="@layout/home_trending_places"/>
+        <include android:id="@+id/home_trending_places"
+            layout="@layout/home_trending_places"/>
 
-        <include layout="@layout/home_region"/>
+        <include android:id="@+id/home_region"
+            layout="@layout/home_region"/>
     </LinearLayout>
 
 

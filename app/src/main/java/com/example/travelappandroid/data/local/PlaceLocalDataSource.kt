@@ -35,6 +35,10 @@ class PlaceLocalDataSource(private val placeDAO: PlaceDAO, private val gson: Gso
         return placeDAO.search(keyword).map { it.toModel(gson) }
     }
 
+    suspend fun getRecommended(rating: Double) : List<Place> {
+        return placeDAO.getRecommended(rating).map { it.toModel(gson) }
+    }
+
     suspend fun savePlaces(list: List<Place>) {
         placeDAO.clear()
         placeDAO.insertAll(list.map { it.toEntity(gson) })
