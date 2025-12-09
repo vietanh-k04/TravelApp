@@ -17,7 +17,7 @@ interface ItineraryDAO {
     suspend fun getById(itineraryId: String): ItineraryEntity?
 
     // 3. Search theo title
-    @Query("SELECT * FROM itineraries WHERE title LIKE '%' || :keyword || '%'")
+    @Query("SELECT * FROM itineraries WHERE nameNoAccent LIKE '%' || :keyword || '%'")
     suspend fun search(keyword: String): List<ItineraryEntity>
 
     // 4. Insert list

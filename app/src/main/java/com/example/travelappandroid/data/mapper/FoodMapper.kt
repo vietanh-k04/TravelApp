@@ -2,6 +2,7 @@ package com.example.travelappandroid.data.mapper
 
 import com.example.travelappandroid.data.entity.FoodEntity
 import com.example.travelappandroid.data.model.Food
+import com.example.travelappandroid.utils.toNoAccent
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 
@@ -12,7 +13,8 @@ fun Food.toEntity(gson: Gson): FoodEntity {
         province = province,
         description = description,
         thumbnail = thumbnail,
-        recommendedPlacesJson = gson.toJson(recommendedPlaces)
+        recommendedPlacesJson = gson.toJson(recommendedPlaces),
+        nameNoAccent = name?.toNoAccent()
     )
 }
 

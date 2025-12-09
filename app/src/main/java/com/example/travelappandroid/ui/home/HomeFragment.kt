@@ -14,6 +14,7 @@ import com.example.travelappandroid.ui.components.RecommendAdapter
 import com.example.travelappandroid.ui.components.TrendingAdapter
 import com.example.travelappandroid.ui.food.FoodAdapter
 import com.example.travelappandroid.ui.itinerary.ItineraryAdapter
+import com.example.travelappandroid.ui.itinerary.ItineraryDisplayMode
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -91,7 +92,7 @@ class HomeFragment : Fragment() {
         foodAdapter = FoodAdapter()
         binding.homeFood.rvFood.adapter = foodAdapter
 
-        itineraryAdapter = ItineraryAdapter()
+        itineraryAdapter = ItineraryAdapter(ItineraryDisplayMode.HOME)
         binding.homeItinerary.rvItinerary.adapter = itineraryAdapter
     }
 

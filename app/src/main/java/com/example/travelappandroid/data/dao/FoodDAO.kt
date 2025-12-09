@@ -21,7 +21,7 @@ interface FoodDAO {
     suspend fun getByProvince(province: String): List<FoodEntity>
 
     // 4. Search theo tên món
-    @Query("SELECT * FROM foods WHERE name LIKE '%' || :keyword || '%'")
+    @Query("SELECT * FROM foods WHERE nameNoAccent LIKE '%' || :keyword || '%'")
     suspend fun search(keyword: String): List<FoodEntity>
 
     // 5. Insert list

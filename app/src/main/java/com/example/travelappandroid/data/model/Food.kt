@@ -6,5 +6,5 @@ data class Food(
     val province: String? = null,
     val description: String? = null,
     val thumbnail: String? = null,
-    val recommendedPlaces: List<String>? = null
+    val recommendedPlaces: List<String>? = null,
 )

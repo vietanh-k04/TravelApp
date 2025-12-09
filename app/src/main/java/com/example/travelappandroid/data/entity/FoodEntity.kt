@@ -10,5 +10,6 @@ data class FoodEntity(
     val province: String? = null,
     val description: String? = null,
     val thumbnail: String? = null,
-    val recommendedPlacesJson: String? = null
+    val recommendedPlacesJson: String? = null,
+    val nameNoAccent: String? = null,
 )

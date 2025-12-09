@@ -1,8 +1,8 @@
 package com.example.travelappandroid.data.mapper
 
 import com.example.travelappandroid.data.entity.ItineraryEntity
-import com.example.travelappandroid.data.entity.PlaceEntity
 import com.example.travelappandroid.data.model.Itinerary
+import com.example.travelappandroid.utils.toNoAccent
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 
@@ -13,7 +13,8 @@ fun Itinerary.toEntity(gson: Gson): ItineraryEntity {
         duration = duration,
         placesJson = gson.toJson(places),
         description = description,
-        thumbnail = thumbnail
+        thumbnail = thumbnail,
+        nameNoAccent = title?.toNoAccent()
     )
 }
 
@@ -27,11 +28,5 @@ fun ItineraryEntity.toModel(gson: Gson): Itinerary {
         places = gson.fromJson(placesJson, listType),
         description = description,
         thumbnail = thumbnail
-    )
-}
-
-fun fromRemote(model: Itinerary, firstPlace: PlaceEntity?): Itinerary {
-    return model.copy(
-        thumbnail = firstPlace?.thumbnail ?: firstPlace?.thumbnail ?: ""
     )
 }
