@@ -19,6 +19,10 @@ class ItineraryLocalDataSource(private val itineraryDAO: ItineraryDAO, private v
         return itineraryDAO.search(keyword).map { it.toModel(gson) }
     }
 
+    suspend fun getTop(count: Int): List<Itinerary> {
+        return itineraryDAO.getTop(count).map { it.toModel(gson) }
+    }
+
     suspend fun saveItineraries(list: List<Itinerary>) {
         itineraryDAO.clear()
         itineraryDAO.insertAll(list.map { it.toEntity(gson) })

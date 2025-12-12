@@ -19,7 +19,7 @@ class ItineraryViewModel @Inject constructor(private val repository: ItineraryRe
 
     fun loadPlans() {
         viewModelScope.launch {
-            _plans.value = repository.getAllItineraries()
+            _plans.value = repository.getTop(3)
         }
     }
 

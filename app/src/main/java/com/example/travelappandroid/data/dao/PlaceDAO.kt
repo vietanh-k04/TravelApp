@@ -33,7 +33,7 @@ interface PlaceDAO {
     suspend fun getByCategory(category: String): List<PlaceEntity>
 
     // 7. Search theo tên
-    @Query("SELECT * FROM places WHERE name LIKE '%' || :keyword || '%'")
+    @Query("SELECT * FROM places WHERE nameNoAccent LIKE '%' || :keyword || '%'")
     suspend fun search(keyword: String): List<PlaceEntity>
 
     // 8. Insert list

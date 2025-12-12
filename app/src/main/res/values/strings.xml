@@ -13,7 +13,16 @@
     <string name="home_hint_itinerary">Gợi ý lịch trình</string>
     <string name="home_hind_food">Khám phá ẩm thực</string>
     <string name="food_hint_kham_pha_am_thuc">Khám phá Ẩm thực Việt Nam</string>
-    <string name="hint_food_search">Tìm món ăn...</string>
+    <string name="hint_food_search">Tìm món ăn…</string>
     <string name="itinerary_hint_title">Kế hoạch du lịch</string>
-    <string name="itinerary_hint_search">Tìm kế hoạch du lịch...</string>
+    <string name="itinerary_hint_search">Tìm kế hoạch du lịch…</string>
+    <string name="explore_hint_title">Khám phá thế giới mới</string>
+    <string name="explore_hint_see_all">Xem tất cả</string>
+    <string name="explore_hint_search">Nhập tên địa điểm…</string>
+    <string name="explore_hint_danh_muc">Danh mục</string>
+    <string name="explore_hint_goi_y">Gợi ý cho bạn</string>
+    <string name="hint_chip_all">Tất cả</string>
+    <string name="hint_chip_bac">Miền Bắc</string>
+    <string name="hint_chip_trung">Miền Trung</string>
+    <string name="hint_chip_nam">Miền Nam</string>
 </resources>

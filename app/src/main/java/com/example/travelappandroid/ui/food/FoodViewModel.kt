@@ -30,7 +30,7 @@ class FoodViewModel @Inject constructor(private val repository: FoodRepository) 
 
     fun loadFoods() {
         viewModelScope.launch {
-            _foods.value = repository.getAllFoods()
+            _foods.value = repository.getTop(5)
         }
     }
 }

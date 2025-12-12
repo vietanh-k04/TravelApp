@@ -2,6 +2,7 @@ package com.example.travelappandroid.data.mapper
 
 import com.example.travelappandroid.data.entity.PlaceEntity
 import com.example.travelappandroid.data.model.Place
+import com.example.travelappandroid.utils.toNoAccent
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 
@@ -22,7 +23,8 @@ fun Place.toEntity(gson: Gson): PlaceEntity {
         latitude = latitude,
         longitude = longitude,
         rating = rating,
-        isTrending = isTrending
+        isTrending = isTrending,
+        nameNoAccent = name?.toNoAccent()
     )
 }
 

@@ -23,6 +23,10 @@ class FoodLocalDataSource(private val foodDAO: FoodDAO, private val gson: Gson) 
         return foodDAO.search(keyword).map { it.toModel(gson) }
     }
 
+    suspend fun getTop(count: Int): List<Food> {
+        return foodDAO.getTop(count).map { it.toModel(gson) }
+    }
+
     suspend fun saveFoods(list: List<Food>) {
         foodDAO.clear()
         foodDAO.insertAll(list.map { it.toEntity(gson) })

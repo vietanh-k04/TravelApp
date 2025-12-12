@@ -25,5 +25,6 @@ data class PlaceEntity(
     val longitude: Double? = null,
 
     val rating: Double? = null,
-    val isTrending: Boolean = false
+    val isTrending: Boolean = false,
+    val nameNoAccent: String? = null
 )
