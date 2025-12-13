@@ -1,4 +1,4 @@
-package com.example.travelappandroid.ui.detail
+package com.example.travelappandroid.ui.detail.detail_place
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

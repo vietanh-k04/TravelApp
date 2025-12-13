@@ -14,7 +14,8 @@ fun Food.toEntity(gson: Gson): FoodEntity {
         description = description,
         thumbnail = thumbnail,
         recommendedPlacesJson = gson.toJson(recommendedPlaces),
-        nameNoAccent = name?.toNoAccent()
+        nameNoAccent = name?.toNoAccent(),
+        provinceNoAccent = province?.toNoAccent()
     )
 }
 

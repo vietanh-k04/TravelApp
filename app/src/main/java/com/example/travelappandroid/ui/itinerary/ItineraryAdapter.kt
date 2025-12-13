@@ -11,7 +11,7 @@ import com.example.travelappandroid.utils.dp
 
 class ItineraryAdapter(private var mode: ItineraryDisplayMode,
       private var items: List<Itinerary>? = null,
-      private val onItemClick: ((Itinerary) -> Unit)? = null) : RecyclerView.Adapter<ItineraryAdapter.ItineraryViewHolder>() {
+      private val onItemClick: ((Itinerary?) -> Unit)? = null) : RecyclerView.Adapter<ItineraryAdapter.ItineraryViewHolder>() {
 
     class ItineraryViewHolder(val binding: ItemItineraryBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Itinerary?, mode: ItineraryDisplayMode) {
@@ -44,5 +44,8 @@ class ItineraryAdapter(private var mode: ItineraryDisplayMode,
 
     override fun onBindViewHolder(holder: ItineraryViewHolder, position: Int) {
         holder.bind(items?.get(position), mode)
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(items?.get(position))
+        }
     }
 }

@@ -21,11 +21,11 @@ interface PlaceDAO {
     suspend fun getTrending(): List<PlaceEntity>
 
     // 4. Theo vùng (region)
-    @Query("SELECT * FROM places WHERE region = :region")
+    @Query("SELECT * FROM places WHERE regionNoAccent = :region")
     suspend fun getByRegion(region: String): List<PlaceEntity>
 
     // 5. Theo tỉnh/thành
-    @Query("SELECT * FROM places WHERE province = :province")
+    @Query("SELECT * FROM places WHERE provinceNoAccent = :province")
     suspend fun getByProvince(province: String): List<PlaceEntity>
 
     // 6. Theo category

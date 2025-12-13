@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.travelappandroid.data.model.Place
 import com.example.travelappandroid.databinding.ItemHomePlaceBinding
 
-class TrendingAdapter(private var items: List<Place>? = null, private val onItemClick: ((Place) -> Unit)? = null) : RecyclerView.Adapter<TrendingAdapter.TrendingViewHolder>() {
+class TrendingAdapter(private var items: List<Place>? = null, private val onItemClick: ((Place?) -> Unit)? = null) : RecyclerView.Adapter<TrendingAdapter.TrendingViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,6 +22,10 @@ class TrendingAdapter(private var items: List<Place>? = null, private val onItem
         position: Int
     ) {
         holder.bind(items?.get(position))
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(items?.get(position))
+        }
     }
 
     override fun getItemCount(): Int = items?.size ?: 0

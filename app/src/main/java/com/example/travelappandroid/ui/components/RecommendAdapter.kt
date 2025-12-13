@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.travelappandroid.data.model.Place
 import com.example.travelappandroid.databinding.ItemHomePlaceBinding
 
-class RecommendAdapter(private var items: List<Place>? = null, private val onItemClick: ((Place) -> Unit)? = null)  : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
+class RecommendAdapter(private var items: List<Place>? = null, private val onItemClick: ((Place?) -> Unit)? = null)  : RecyclerView.Adapter<RecommendAdapter.RecommendViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,6 +22,10 @@ class RecommendAdapter(private var items: List<Place>? = null, private val onIte
         position: Int
     ) {
         holder.bind(items?.get(position))
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(items?.get(position))
+        }
     }
 
     override fun getItemCount(): Int = items?.size ?: 0

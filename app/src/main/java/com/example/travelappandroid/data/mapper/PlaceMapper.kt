@@ -24,7 +24,10 @@ fun Place.toEntity(gson: Gson): PlaceEntity {
         longitude = longitude,
         rating = rating,
         isTrending = isTrending,
-        nameNoAccent = name?.toNoAccent()
+        nameNoAccent = name?.toNoAccent(),
+        regionNoAccent = region?.toNoAccent(),
+        provinceNoAccent = province?.toNoAccent()
+
     )
 }
 

@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.PlaceDetailFragment">
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.detail.detail_place.PlaceDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include android:id="@+id/detail_thumbnail"
+            layout="@layout/detail_place_thumbnail"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:clipToPadding="false"
+        android:paddingBottom="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <include android:id="@+id/detail_title"
+                layout="@layout/detail_place_title"/>
+
+            <include android:id="@+id/detail_region"
+                layout="@layout/detail_place_region"/>
+
+            <include android:id="@+id/detail_introduce"
+                layout="@layout/detail_place_introduce"/>
+
+            <include layout="@layout/divider"/>
+
+            <include android:id="@+id/detail_description"
+                layout="@layout/detail_place_description"/>
+
+            <include layout="@layout/divider"/>
+
+            <include android:id="@+id/detail_tips"
+                layout="@layout/detail_place_tips"/>
+
+            <include android:id="@+id/detail_list_picture"
+                layout="@layout/detail_place_list_picture"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include android:id="@+id/float_button_favorite"
+        layout="@layout/float_button_favorite"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

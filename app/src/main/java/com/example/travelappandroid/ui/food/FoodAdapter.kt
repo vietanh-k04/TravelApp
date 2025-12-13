@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.travelappandroid.data.model.Food
 import com.example.travelappandroid.databinding.ItemFoodBinding
 
-class FoodAdapter(private var items: List<Food>? = null, private val onItemClick: ((Food) -> Unit)? = null) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+class FoodAdapter(private var items: List<Food>? = null, private val onItemClick: ((Food?) -> Unit)? = null) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
     class FoodViewHolder(val binding: ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Food?) {
             binding.tvFoodName.text = item?.name
@@ -31,6 +31,10 @@ class FoodAdapter(private var items: List<Food>? = null, private val onItemClick
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         holder.bind(items?.get(position))
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(items?.get(position))
+        }
     }
 
 }

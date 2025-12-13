@@ -12,4 +12,5 @@ data class FoodEntity(
     val thumbnail: String? = null,
     val recommendedPlacesJson: String? = null,
     val nameNoAccent: String? = null,
+    val provinceNoAccent: String? = null
 )

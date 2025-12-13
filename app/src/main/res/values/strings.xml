@@ -25,4 +25,18 @@
     <string name="hint_chip_bac">Miền Bắc</string>
     <string name="hint_chip_trung">Miền Trung</string>
     <string name="hint_chip_nam">Miền Nam</string>
+    <string name="detail_hint_time_open">Giờ mở cửa</string>
+    <string name="detail_hint_ticket_price">Giá vé tham khảo</string>
+    <string name="detail_hint_description">Giới thiệu</string>
+    <string name="detail_hint_picture">Thư viện ảnh</string>
+    <string name="detail_hint_save">Lưu địa điểm</string>
+    <string name="detail_hint_tip"><![CDATA[Mẹo nhỏ & Lưu ý]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="detail_hint_eat">Ăn ở đâu ngon?</string>
+    <string name="detail_hint_journey">Giới thiệu hành trình</string>
+    <string name="detail_hint_itinerary">Lộ trình chi tiết</string>
+    <string name="local_hint_places">Địa điểm nổi bật</string>
+    <string name="local_hint_foods">Ẩm thực đặc sắc</string>
+    <string name="local_hint_itinerary">Lịch trình gợi ý</string>
 </resources>

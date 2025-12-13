@@ -26,5 +26,7 @@ data class PlaceEntity(
 
     val rating: Double? = null,
     val isTrending: Boolean = false,
-    val nameNoAccent: String? = null
+    val nameNoAccent: String? = null,
+    val regionNoAccent: String? = null,
+    val provinceNoAccent: String? = null,
 )

@@ -10,7 +10,7 @@ import com.example.travelappandroid.databinding.ItemExploreStaggeredBinding
 
 class PlaceStaggeredAdapter(
     private var items: List<Place>? = null,
-    private val onItemClick: ((Place) -> Unit)? = null
+    private val onItemClick: ((Place?) -> Unit)? = null
 ) : RecyclerView.Adapter<PlaceStaggeredAdapter.PlaceViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceViewHolder {
@@ -20,6 +20,10 @@ class PlaceStaggeredAdapter(
 
     override fun onBindViewHolder(holder: PlaceViewHolder, position: Int) {
         holder.bind(items?.get(position))
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(items?.get(position))
+        }
     }
 
     override fun getItemCount(): Int = items?.size ?: 0

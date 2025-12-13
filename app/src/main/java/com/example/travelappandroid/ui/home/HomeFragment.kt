@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.travelappandroid.NavGraphDirections
 import com.example.travelappandroid.data.model.RegionItem
 import com.example.travelappandroid.databinding.FragmentHomeBinding
 import com.example.travelappandroid.ui.components.BannerSlider
@@ -29,7 +31,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var trendingAdapter: TrendingAdapter
 
-    private lateinit var regionAdapter: RegionAdapter
+
 
     private lateinit var foodAdapter: FoodAdapter
 
@@ -59,8 +61,6 @@ class HomeFragment : Fragment() {
         observeItinerary()
 
         registerOnPage()
-
-        setUpRegion()
     }
 
     override fun onPause() {
@@ -83,22 +83,27 @@ class HomeFragment : Fragment() {
         binding.homeBanner.bannerViewPager.adapter = bannerAdapter
         binding.homeBanner.bannerIndicator.attachTo(binding.homeBanner.bannerViewPager)
 
-        recommendAdapter = RecommendAdapter()
+        recommendAdapter = RecommendAdapter { place ->
+            navigateToDetail(place?.id ?: "")
+        }
         binding.homeRecommend.rvRecommend.adapter = recommendAdapter
 
-        trendingAdapter = TrendingAdapter()
+        trendingAdapter = TrendingAdapter { place ->
+            navigateToDetail(place?.id ?: "")
+        }
         binding.homeTrendingPlaces.rvTrending.adapter = trendingAdapter
 
-        foodAdapter = FoodAdapter()
+        foodAdapter = FoodAdapter { food ->
+            val action = NavGraphDirections.actionGlobalFoodDetailFragment(food?.id ?: "")
+            findNavController().navigate(action)
+        }
         binding.homeFood.rvFood.adapter = foodAdapter
 
-        itineraryAdapter = ItineraryAdapter(ItineraryDisplayMode.HOME)
+        itineraryAdapter = ItineraryAdapter(ItineraryDisplayMode.HOME) { itinerary ->
+            val action = NavGraphDirections.actionGlobalItineraryDetailFragment(itinerary?.id ?: "")
+            findNavController().navigate(action)
+        }
         binding.homeItinerary.rvItinerary.adapter = itineraryAdapter
-    }
-
-    private fun setUpRegion() {
-        regionAdapter = RegionAdapter(dataRegionList())
-        binding.homeRegion.rvRegion.adapter = regionAdapter
     }
 
     private fun setUpBannerSlide() {
@@ -146,23 +151,8 @@ class HomeFragment : Fragment() {
         )
     }
 
-    private fun dataRegionList() : List<RegionItem> {
-        return listOf(
-            RegionItem(
-                title = "Miền Bắc",
-                imageUrl = "https://res.cloudinary.com/djngmdetx/image/upload/v1765196150/bac_evevwg.webp",
-                regionCode = "North"
-            ),
-            RegionItem(
-                title = "Miền Trung",
-                imageUrl = "https://res.cloudinary.com/djngmdetx/image/upload/v1765196150/trung_iletz9.webp",
-                regionCode = "Central"
-            ),
-            RegionItem(
-                title = "Miền Nam",
-                imageUrl = "https://res.cloudinary.com/djngmdetx/image/upload/v1765196150/nam_yvnxni.webp",
-                regionCode = "South"
-            )
-        )
+    private fun navigateToDetail(placeId: String) {
+        val action = NavGraphDirections.actionGlobalPlaceDetailFragment(placeId)
+        findNavController().navigate(action)
     }
 }

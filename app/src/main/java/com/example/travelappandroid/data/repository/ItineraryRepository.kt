@@ -14,6 +14,8 @@ class ItineraryRepository(private val local: ItineraryLocalDataSource, private v
 
     suspend fun getTop(count: Int): List<Itinerary> = local.getTop(count)
 
+    suspend fun getItineraryByProvince(province: String): List<Itinerary> = local.getItineraryByProvince(province)
+
     suspend fun refreshItineraries() {
         val itineraries = remote.getAllItineraries()
 
@@ -31,5 +33,7 @@ class ItineraryRepository(private val local: ItineraryLocalDataSource, private v
             local.saveItineraries(enriched)
         }
     }
+
+
 
 }

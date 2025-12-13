@@ -17,7 +17,7 @@ interface FoodDAO {
     suspend fun getById(foodId: String): FoodEntity?
 
     // Lấy theo tỉnh
-    @Query("SELECT * FROM foods WHERE province = :province")
+    @Query("SELECT * FROM foods WHERE provinceNoAccent = :province")
     suspend fun getByProvince(province: String): List<FoodEntity>
 
     // Lấy "count" thức ăn

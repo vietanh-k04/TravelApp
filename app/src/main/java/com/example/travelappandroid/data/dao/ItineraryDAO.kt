@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.travelappandroid.data.entity.ItineraryEntity
+import com.example.travelappandroid.data.entity.PlaceEntity
 
 @Dao
 interface ItineraryDAO {
@@ -19,6 +20,9 @@ interface ItineraryDAO {
     // Search theo title
     @Query("SELECT * FROM itineraries WHERE nameNoAccent LIKE '%' || :keyword || '%'")
     suspend fun search(keyword: String): List<ItineraryEntity>
+
+    @Query("SELECT * FROM itineraries WHERE provinceNoAccent = :province")
+    suspend fun getItineraryByProvince(province: String): List<ItineraryEntity>
 
     // Lấy "count" kế hoạch
     @Query("SELECT * FROM itineraries LIMIT :count")

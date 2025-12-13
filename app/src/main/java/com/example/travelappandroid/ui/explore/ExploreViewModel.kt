@@ -17,6 +17,8 @@ class ExploreViewModel @Inject constructor(private val placeRepository: PlaceRep
 
     val places: LiveData<List<Place>> = _places
 
+    private var currentRegion: String? = null
+
     init {
         loadPlaces()
     }
@@ -30,13 +32,42 @@ class ExploreViewModel @Inject constructor(private val placeRepository: PlaceRep
 
     fun searchPlaces(keyword: String) {
         viewModelScope.launch {
-            val normalizer = keyword.toNoAccent()
-            _places.value = if(keyword.isBlank()) {
-                placeRepository.getAllPlaces()
-            }
-            else {
+            if (keyword.isBlank()) {
+                if (currentRegion != null) {
+                    _places.value = placeRepository.getPlacesByRegion(currentRegion!!)
+                } else {
+                    loadPlaces()
+                }
+            } else {
+                val normalizer = keyword.toNoAccent()
                 placeRepository.searchPlaces(normalizer)
+                    .let { list ->
+                        _places.value = list
+                    }
             }
+        }
+    }
+
+    fun filterByRegion(regionKey: String) {
+        viewModelScope.launch {
+            if (currentRegion == regionKey) {
+                currentRegion = null
+                loadPlaces()
+            } else {
+                currentRegion = regionKey
+                val dbRegionValue = mapRegionKeyToDbValue(regionKey)
+                val normalizer = dbRegionValue.toNoAccent()
+                _places.value = placeRepository.getPlacesByRegion(normalizer)
+            }
+        }
+    }
+
+    private fun mapRegionKeyToDbValue(key: String): String {
+        return when (key) {
+            "North" -> "Miền Bắc"
+            "Central" -> "Miền Trung"
+            "South" -> "Miền Nam"
+            else -> ""
         }
     }
 }

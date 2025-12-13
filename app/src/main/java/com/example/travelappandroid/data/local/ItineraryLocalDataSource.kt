@@ -1,6 +1,7 @@
 package com.example.travelappandroid.data.local
 
 import com.example.travelappandroid.data.dao.ItineraryDAO
+import com.example.travelappandroid.data.entity.ItineraryEntity
 import com.example.travelappandroid.data.mapper.toEntity
 import com.example.travelappandroid.data.mapper.toModel
 import com.example.travelappandroid.data.model.Itinerary
@@ -21,6 +22,10 @@ class ItineraryLocalDataSource(private val itineraryDAO: ItineraryDAO, private v
 
     suspend fun getTop(count: Int): List<Itinerary> {
         return itineraryDAO.getTop(count).map { it.toModel(gson) }
+    }
+
+    suspend fun getItineraryByProvince(province: String): List<Itinerary> {
+        return itineraryDAO.getItineraryByProvince(province).map { it.toModel(gson) }
     }
 
     suspend fun saveItineraries(list: List<Itinerary>) {

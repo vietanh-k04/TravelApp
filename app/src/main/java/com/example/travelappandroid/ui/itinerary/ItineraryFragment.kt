@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.travelappandroid.NavGraphDirections
 import com.example.travelappandroid.databinding.FragmentItineraryBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,7 +36,10 @@ class ItineraryFragment : Fragment() {
     }
 
     fun setUpAdapter() {
-        adapter = ItineraryAdapter(ItineraryDisplayMode.PLAN)
+        adapter = ItineraryAdapter(ItineraryDisplayMode.PLAN) { itinerary ->
+            val action = NavGraphDirections.actionGlobalItineraryDetailFragment(itinerary?.id ?: "")
+            findNavController().navigate(action)
+        }
         binding.rvItinerary.adapter = adapter
     }
 

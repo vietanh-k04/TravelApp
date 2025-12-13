@@ -10,11 +10,13 @@ fun Itinerary.toEntity(gson: Gson): ItineraryEntity {
     return ItineraryEntity(
         id = id,
         title = title,
+        province = province,
         duration = duration,
         placesJson = gson.toJson(places),
         description = description,
         thumbnail = thumbnail,
-        nameNoAccent = title?.toNoAccent()
+        nameNoAccent = title?.toNoAccent(),
+        provinceNoAccent = province?.toNoAccent()
     )
 }
 
@@ -27,6 +29,7 @@ fun ItineraryEntity.toModel(gson: Gson): Itinerary {
         duration = duration,
         places = gson.fromJson(placesJson, listType),
         description = description,
-        thumbnail = thumbnail
+        thumbnail = thumbnail,
+        province = province,
     )
 }

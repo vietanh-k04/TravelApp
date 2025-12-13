@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.travelappandroid.NavGraphDirections
 import com.example.travelappandroid.databinding.FragmentFoodBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +34,10 @@ class FoodFragment : Fragment() {
     }
 
     fun setUpAdapter() {
-        adapter = FoodAdapter()
+        adapter = FoodAdapter { food ->
+            val action = NavGraphDirections.actionGlobalFoodDetailFragment(food?.id ?: "")
+            findNavController().navigate(action)
+        }
         binding.rvFoods.adapter = adapter
     }
 

@@ -10,14 +10,22 @@
         android:name="com.example.travelappandroid.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment_to_placeDetailFragment"
-            app:destination="@id/placeDetailFragment" />
+            android:id="@+id/action_homeFragment_to_locationDetailFragment"
+            app:destination="@id/locationDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/placeDetailFragment"
-        android:name="com.example.travelappandroid.ui.detail.PlaceDetailFragment"
+        android:name="com.example.travelappandroid.ui.detail.detail_place.PlaceDetailFragment"
         android:label="fragment_place_detail"
-        tools:layout="@layout/fragment_place_detail" />
+        tools:layout="@layout/fragment_place_detail">
+        <argument
+            android:name="placeId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.example.travelappandroid.ui.explore.ExploreFragment"
@@ -33,4 +41,54 @@
         android:name="com.example.travelappandroid.ui.food.FoodFragment"
         android:label="fragment_food"
         tools:layout="@layout/fragment_food" />
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.example.travelappandroid.ui.detail.detail_food.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail">
+        <argument
+            android:name="foodId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itineraryDetailFragment"
+        android:name="com.example.travelappandroid.ui.detail.detail_itinerary.ItineraryDetailFragment"
+        android:label="fragment_itinerary_detail"
+        tools:layout="@layout/fragment_itinerary_detail">
+        <argument
+            android:name="itineraryId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailFragment"
+        android:name="com.example.travelappandroid.ui.quick_place.LocationDetailFragment"
+        android:label="fragment_location_detail"
+        tools:layout="@layout/fragment_location_detail">
+        <argument
+            android:name="locationName"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_placeDetailFragment"
+        app:destination="@id/placeDetailFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    <action
+        android:id="@+id/action_global_foodDetailFragment"
+        app:destination="@id/foodDetailFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/action_global_itineraryDetailFragment"
+        app:destination="@id/itineraryDetailFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 </navigation>

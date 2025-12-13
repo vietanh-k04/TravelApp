@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:id="@+id/cardRegion"
+    android:layout_width="120dp"
+    android:layout_height="50dp"
     android:layout_margin="6dp"
     android:importantForAccessibility="no"
-    app:cardCornerRadius="18dp"
-    app:cardUseCompatPadding="true">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="0dp"
+    app:strokeColor="@color/primary">
 
     <ImageView
         android:id="@+id/imgRegion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        tools:src="@drawable/ic_launcher_background"
+        android:src="@drawable/ic_launcher_background"
         tools:ignore="ContentDescription" />
 
     <View
+        android:id="@+id/overlayView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#55000000" />
@@ -27,8 +31,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textSize="16sp"
+        tools:text="Miền Bắc"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
-        tools:text="Miền Bắc"/>
-</androidx.cardview.widget.CardView>
+        android:shadowColor="#80000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"/>
+
+</com.google.android.material.card.MaterialCardView>
