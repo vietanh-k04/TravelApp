@@ -2,6 +2,7 @@
 Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông tin điểm đến, khám phá ẩm thực địa phương và tham khảo lịch trình tham quan tại Việt Nam. Dự án được xây dựng theo kiến trúc MVVM, tập trung vào trải nghiệm mượt mà trên nhiều thiết bị.
 
 ✨ Tính năng chính (Key Features)
+
 🏠 Trang chủ (Home):
 
   Banner trượt (Slider) giới thiệu các địa điểm nổi bật.
@@ -12,15 +13,15 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 
 📍 Chi tiết địa điểm (Location Detail):
 
-  Hiển thị thông tin chi tiết: Hình ảnh, mô tả, đánh giá.
+   Hiển thị thông tin chi tiết: Hình ảnh, mô tả, đánh giá.
 
   Tích hợp:
 
-  🍜 Ẩm thực (Foods): Gợi ý món ngon đặc sản tại địa điểm đó.
+    🍜 Ẩm thực (Foods): Gợi ý món ngon đặc sản tại địa điểm đó.
 
-  🗺 Lịch trình (Itinerary): Gợi ý lộ trình tham quan phù hợp.
+    🗺 Lịch trình (Itinerary): Gợi ý lộ trình tham quan phù hợp.
 
-  Điều hướng mượt mà với Navigation Component.
+   Điều hướng mượt mà với Navigation Component.
 
 🔎 Truy cập nhanh (Quick Access):
 
@@ -45,36 +46,51 @@ Dự án sử dụng ngôn ngữ Kotlin và bộ công cụ Android Jetpack:
 📚 Thư viện & Công cụ (Libraries)
   Android Jetpack:
 
-  Navigation Component: Quản lý điều hướng và truyền dữ liệu (Safe Args).
+    Navigation Component: Quản lý điều hướng và truyền dữ liệu (Safe Args).
 
-  ViewModel & LiveData: Quản lý trạng thái UI và vòng đời ứng dụng.
+    ViewModel & LiveData: Quản lý trạng thái UI và vòng đời ứng dụng.
 
-  ViewBinding: Thay thế findViewById giúp truy cập View an toàn hơn.
+    ViewBinding: Thay thế findViewById giúp truy cập View an toàn hơn.
 
   Giao diện & Hiệu ứng:
 
-  SDP & SSP: Thư viện hỗ trợ đa màn hình (tự động co giãn kích thước View và Text theo tỉ lệ màn hình).
+    SDP & SSP: Thư viện hỗ trợ đa màn hình (tự động co giãn kích thước View và Text theo tỉ lệ màn hình).
 
-  Lottie Animation: Hiển thị hình ảnh động vector chất lượng cao (Splash Screen).
+    Lottie Animation: Hiển thị hình ảnh động vector chất lượng cao (Splash Screen).
 
-  Glide: Tải và hiển thị hình ảnh từ Internet tối ưu bộ nhớ.
+    Glide: Tải và hiển thị hình ảnh từ Internet tối ưu bộ nhớ.
 
-  Xử lý bất đồng bộ:
+    Xử lý bất đồng bộ:
 
-  Coroutines: Xử lý tác vụ nền (Load data) mượt mà, không gây đứng máy.
+    Coroutines: Xử lý tác vụ nền (Load data) mượt mà, không gây đứng máy.
 
 📂 Cấu trúc thư mục (Project Structure)
 com.example.travelappandroid
-├── di                    # Cấu hình Hilt (Dependency Injection)
-├── ui                    # Giao diện người dùng
-│   ├── home              # Màn hình chính
-│   ├── detail            # Màn hình chi tiết địa điểm
-│   ├── splash            # Màn hình chào (Lottie)
-│   └── components        # Các Adapter (Place, Food, Itinerary)
-├── data                  # Dữ liệu
-│   ├── model             # Các Model (Place, Food, Itinerary)
-│   └── repository        # Quản lý nguồn dữ liệu
-└── utils                 # Các hàm tiện ích (Extensions)
+├── di                    
+│   ├── Appmodule                
+│   ├── DataSourceModule     
+│   ├── MyApplication
+│   └── RepositoryModule                       
+├── ui                    
+│   ├── components                
+│   ├── detail      
+│   ├── explore      
+│   ├── food       
+│   ├── home    
+│   ├── itinerary   
+│   ├── main    
+│   ├── quick_place    
+│   └── splash        
+├── data                  
+│   ├── dao        
+│   ├── database      
+│   ├── entity     
+│   ├── local     
+│   ├── mapper     
+│   ├── model      
+│   ├── remote      
+│   └── repository       
+└── utils                
 📱 Screenshots
 <img src="..." width="200">
 <img src="..." width="200">
