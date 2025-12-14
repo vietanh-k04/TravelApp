@@ -92,10 +92,18 @@ com.example.travelappandroid
 │   └── repository       
 └── utils                
 📱 Screenshots
-<img src="screenshot/home_1" width="200">
-<img src="..." width="200">
-<img src="..." width="200">
-<img src="..." width="200">
-👨‍💻 Tác giả
-Phát triển bởi: [Nguyễn Việt Anh]
-Dự án: [Dự án cá nhân]
+<img src="screenshot/home_1.png" width="200">
+<img src="screenshot/home_2.png" width="200">
+<img src="screenshot/explore.png" width="200">
+<img src="screenshot/food.png" width="200">
+<img src="screenshot/plan.png" width="200">
+<img src="screenshot/quick_explore.png" width="200">
+<img src="screenshot/detail_place_1.png" width="200">
+<img src="screenshot/detail_place_2.png" width="200">
+<img src="screenshot/detail_food.png" width="200">
+<img src="screenshot/detail_plan.png" width="200">
+
+👨‍💻 Tác giả (Author)
+Họ và tên: [Nguyễn Việt Anh]
+Liên hệ: [kotenvietx72@gmail.com]
+Dự án: Dự án cá nhân
