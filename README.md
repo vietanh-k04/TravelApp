@@ -13,7 +13,7 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 
 📍 Chi tiết địa điểm (Location Detail):
 
-   Hiển thị thông tin chi tiết: Hình ảnh, mô tả, đánh giá.
+     Hiển thị thông tin chi tiết: Hình ảnh, mô tả, đánh giá.
 
   Tích hợp:
 
@@ -21,27 +21,27 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 
     🗺 Lịch trình (Itinerary): Gợi ý lộ trình tham quan phù hợp.
 
-   Điều hướng mượt mà với Navigation Component.
+     Điều hướng mượt mà với Navigation Component.
 
 🔎 Truy cập nhanh (Quick Access):
 
-  Tìm kiếm và truy cập nhanh các địa điểm theo danh mục hoặc từ khóa.
+    Tìm kiếm và truy cập nhanh các địa điểm theo danh mục hoặc từ khóa.
 
 🎨 Trải nghiệm người dùng (UX):
 
-  Splash Screen: Màn hình chào ấn tượng với hiệu ứng hoạt hình Lottie.
+    Splash Screen: Màn hình chào ấn tượng với hiệu ứng hoạt hình Lottie.
 
-  Responsive Text: Hỗ trợ hiển thị tốt ngay cả khi người dùng bật chế độ "Chữ lớn" (Large Text) trên điện thoại.
+    Responsive Text: Hỗ trợ hiển thị tốt ngay cả khi người dùng bật chế độ "Chữ lớn" (Large Text) trên điện thoại.
 
 🛠 Công nghệ sử dụng (Tech Stack)
 Dự án sử dụng ngôn ngữ Kotlin và bộ công cụ Android Jetpack:
 
 🏗 Kiến trúc (Architecture)
-  MVVM (Model-View-ViewModel): Tách biệt logic xử lý và giao diện người dùng.
+    MVVM (Model-View-ViewModel): Tách biệt logic xử lý và giao diện người dùng.
 
-  Dependency Injection: Sử dụng Hilt để quản lý các thành phần, giúp code gọn gàng và dễ bảo trì.
+    Dependency Injection: Sử dụng Hilt để quản lý các thành phần, giúp code gọn gàng và dễ bảo trì.
 
-  Single Activity: Thiết kế ứng dụng với 1 Activity duy nhất chứa nhiều Fragment.
+    Single Activity: Thiết kế ứng dụng với 1 Activity duy nhất chứa nhiều Fragment.
 
 📚 Thư viện & Công cụ (Libraries)
   Android Jetpack:
