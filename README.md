@@ -91,7 +91,7 @@ com.example.travelappandroid
 │   ├── remote      
 │   └── repository       
 └── utils                
-📱 Screenshots
+📱 Screenshots                
 <img src="screenshot/home_1.png" width="200">
 <img src="screenshot/home_2.png" width="200">
 <img src="screenshot/explore.png" width="200">
@@ -104,6 +104,6 @@ com.example.travelappandroid
 <img src="screenshot/detail_plan.png" width="200">
 
 👨‍💻 Tác giả (Author)
-Họ và tên: [Nguyễn Việt Anh]
-Liên hệ: [kotenvietx72@gmail.com]
-Dự án: Dự án cá nhân
+Họ và tên: [Nguyễn Việt Anh]                
+Liên hệ: [kotenvietx72@gmail.com]                
+Dự án: Dự án cá nhân                
