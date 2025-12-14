@@ -58,8 +58,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
-
     implementation(libs.androidx.core.ktx.v1120)
     implementation(libs.androidx.appcompat.v161)
     implementation(libs.material.v1100)
@@ -119,4 +117,13 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.androidx.hilt.navigation.fragment)
+
+    implementation(libs.osmdroid.android)
+
+    implementation(libs.androidx.preference.ktx)
+
+    implementation(libs.lottie.v610)
+
+    implementation(libs.sdp.android)
+    implementation(libs.ssp.android)
 }

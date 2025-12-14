@@ -1,6 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -10,8 +11,8 @@
         android:layout_height="wrap_content"
         android:text="@string/home_hint_quick"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:padding="16dp" />
+        android:textSize="@dimen/_24ssp"
+        android:padding="@dimen/_16sdp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -22,45 +23,46 @@
             android:id="@+id/chipGroupQuickExplore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:padding="@dimen/_8sdp"
             app:singleLine="true"
-            app:chipSpacing="12dp">
+            app:chipSpacing="@dimen/_12sdp"
+            tools:ignore="VisualLintBounds">
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hà Nội" />
+                android:text="@string/home_hint_chip_HN" />
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đà Nẵng" />
+                android:text="@string/home_hint_chip_DN" />
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Huế" />
+                android:text="@string/home_hint_chip_H" />
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đà Lạt" />
+                android:text="@string/home_hint_chip_NB" />
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nha Trang" />
+                android:text="@string/home_hint_chip_PQ" />
 
             <com.google.android.material.chip.Chip
                 style="@style/QuickChipStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sài Gòn" />
+                android:text="@string/home_hint_chip_HCM" />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>

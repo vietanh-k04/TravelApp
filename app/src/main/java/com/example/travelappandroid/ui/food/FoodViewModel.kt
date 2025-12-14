@@ -16,6 +16,10 @@ class FoodViewModel @Inject constructor(private val repository: FoodRepository) 
     private val _foods = MutableLiveData<List<Food>>()
     val foods: LiveData<List<Food>> = _foods
 
+    init {
+        loadFoods()
+    }
+
     fun search(keyword: String) {
         viewModelScope.launch {
             val normalizer = keyword.toNoAccent()
@@ -30,7 +34,7 @@ class FoodViewModel @Inject constructor(private val repository: FoodRepository) 
 
     fun loadFoods() {
         viewModelScope.launch {
-            _foods.value = repository.getTop(5)
+            _foods.value = repository.getAllFoods()
         }
     }
 }

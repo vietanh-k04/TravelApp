@@ -17,11 +17,11 @@ interface FoodDAO {
     suspend fun getById(foodId: String): FoodEntity?
 
     // Lấy theo tỉnh
-    @Query("SELECT * FROM foods WHERE provinceNoAccent = :province")
+    @Query("SELECT * FROM foods WHERE provinceNoAccent LIKE '%' || :province || '%'")
     suspend fun getByProvince(province: String): List<FoodEntity>
 
     // Lấy "count" thức ăn
-    @Query("SELECT * FROM places LIMIT :count")
+    @Query("SELECT * FROM foods LIMIT :count")
     suspend fun getTop(count: Int): List<FoodEntity>
 
     // Search theo tên món

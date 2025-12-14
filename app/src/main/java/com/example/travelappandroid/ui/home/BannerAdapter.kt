@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.travelappandroid.data.model.Banner
 import com.example.travelappandroid.databinding.ItemBannerBinding
 
-class BannerAdapter(private var items: List<Banner>? = null) : RecyclerView.Adapter<BannerAdapter.BannerViewHolder>() {
+class BannerAdapter(private var items: List<Banner>? = null, private val onItemClick: (String) -> Unit) : RecyclerView.Adapter<BannerAdapter.BannerViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -21,7 +21,11 @@ class BannerAdapter(private var items: List<Banner>? = null) : RecyclerView.Adap
         holder: BannerViewHolder,
         position: Int
     ) {
-        holder.bind(items?.get(position))
+        val banner = items?.get(position)
+        holder.bind(banner)
+        holder.itemView.setOnClickListener {
+            onItemClick.invoke(banner?.placeId ?: "")
+        }
     }
 
     override fun getItemCount(): Int = items?.size ?: 0

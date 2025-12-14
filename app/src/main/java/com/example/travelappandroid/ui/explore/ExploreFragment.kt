@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.travelappandroid.NavGraphDirections
@@ -46,7 +45,7 @@ class ExploreFragment : Fragment() {
             val action = NavGraphDirections.actionGlobalPlaceDetailFragment(place?.id ?: "")
             findNavController().navigate(action)
         }
-        binding.explorePlaces.rvPlaceStaggered.adapter = adapter
+        binding.exploreList.rvPlaceStaggered.adapter = adapter
     }
 
     fun setUpObserve() {
@@ -56,18 +55,7 @@ class ExploreFragment : Fragment() {
     }
 
     private fun setUpSearchLogic() {
-        binding.exploreTitle.btnSearchPlace.setOnClickListener {
-            val isVisible = binding.exploreSearch.searchContainer.isVisible
-            binding.exploreSearch.searchContainer.isVisible = !isVisible
-
-            if (!isVisible) {
-                binding.exploreSearch.edtSearchExplore.requestFocus()
-            } else {
-                binding.exploreSearch.edtSearchExplore.text.clear()
-            }
-        }
-
-        binding.exploreSearch.edtSearchExplore.addTextChangedListener(object : TextWatcher {
+        binding.exploreHeader.edtSearchExplore.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {
                 viewModel.searchPlaces(s.toString())
@@ -82,7 +70,7 @@ class ExploreFragment : Fragment() {
             viewModel.filterByRegion(regionCode?.regionCode ?: "")
         }
 
-        binding.exploreRegion.rvRegion.adapter = regionAdapter
+        binding.exploreList.rvRegion.adapter = regionAdapter
     }
 
     private fun dataRegionList() : List<RegionItem> {

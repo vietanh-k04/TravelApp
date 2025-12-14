@@ -34,12 +34,16 @@ class HomeViewModel @Inject constructor(private val bannerRepository: BannerRepo
     private val _itineraries = MutableLiveData<List<Itinerary>>()
     val itineraries: LiveData<List<Itinerary>> = _itineraries
 
+    private val _places = MutableLiveData<List<Place>>()
+    val places: LiveData<List<Place>> = _trending
+
     init {
         loadBanners()
         loadRecommended()
         loadTrending()
         loadFoods()
         loadItineraries()
+        loadPlaces()
     }
 
     fun loadBanners() {
@@ -65,13 +69,20 @@ class HomeViewModel @Inject constructor(private val bannerRepository: BannerRepo
 
     fun loadFoods() {
         viewModelScope.launch {
-            _foods.value = foodRepository.getAllFoods()
+            _foods.value = foodRepository.getTop(5)
         }
     }
 
     fun loadItineraries() {
         viewModelScope.launch {
-            _itineraries.value = itineraryRepository.getAllItineraries()
+            _itineraries.value = itineraryRepository.getTop(3)
+        }
+    }
+
+    fun loadPlaces() {
+        viewModelScope.launch {
+            val data = placeRepository.getAllPlaces()
+            _places.value = data
         }
     }
 }

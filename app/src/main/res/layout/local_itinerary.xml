@@ -8,10 +8,10 @@
 
     <TextView
         android:text="@string/local_hint_itinerary"
-        android:textSize="20sp"
+        android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/_16sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -20,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+        android:layoutAnimation="@anim/layout_animation_slide_up"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_itinerary"/>

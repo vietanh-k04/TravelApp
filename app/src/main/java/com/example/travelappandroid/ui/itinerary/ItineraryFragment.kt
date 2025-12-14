@@ -40,7 +40,7 @@ class ItineraryFragment : Fragment() {
             val action = NavGraphDirections.actionGlobalItineraryDetailFragment(itinerary?.id ?: "")
             findNavController().navigate(action)
         }
-        binding.rvItinerary.adapter = adapter
+        binding.itineraryList.rvItinerary.adapter = adapter
     }
 
     fun setUpObserve() {
@@ -51,7 +51,7 @@ class ItineraryFragment : Fragment() {
     }
 
     fun searchPlans() {
-        binding.edtSearchItinerary.addTextChangedListener(object : TextWatcher {
+        binding.itineraryHeader.edtSearchItinerary.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {

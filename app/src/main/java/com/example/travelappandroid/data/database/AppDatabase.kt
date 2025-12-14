@@ -16,7 +16,7 @@ import com.example.travelappandroid.data.entity.PlaceEntity
         PlaceEntity::class,
         FoodEntity::class,
         BannerEntity::class,
-        ItineraryEntity::class ],
+        ItineraryEntity::class, ],
     version = 8,
     exportSchema = false
 )

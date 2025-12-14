@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         tools:text="Hành trình xuyên Việt 10 ngày"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="@dimen/_24ssp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -19,13 +19,13 @@
         android:layout_height="wrap_content"
         android:importantForAccessibility="no"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:gravity="center_vertical"
         tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
             android:importantForAccessibility="no"
             android:src="@drawable/ic_check_circle"
             app:tint="@color/gray"/>
@@ -33,10 +33,10 @@
             android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/_8sdp"
             tools:text="4 ngày 3 đêm"
             android:textColor="@color/gray"
-            android:textSize="14sp"
+            android:textSize="@dimen/_14ssp"
             android:textStyle="bold"/>
     </LinearLayout>
 

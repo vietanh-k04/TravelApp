@@ -25,7 +25,7 @@ interface PlaceDAO {
     suspend fun getByRegion(region: String): List<PlaceEntity>
 
     // 5. Theo tỉnh/thành
-    @Query("SELECT * FROM places WHERE provinceNoAccent = :province")
+    @Query("SELECT * FROM places WHERE provinceNoAccent LIKE '%' || :province || '%'")
     suspend fun getByProvince(province: String): List<PlaceEntity>
 
     // 6. Theo category

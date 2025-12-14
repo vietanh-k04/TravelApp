@@ -12,14 +12,15 @@
         android:layout_height="wrap_content"
         android:text="@string/detail_hint_tip"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="@dimen/_18ssp"
         android:textColor="@color/black"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="@dimen/_16sdp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDetailTips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/layout_animation_slide_up"
         android:nestedScrollingEnabled="false"
         android:overScrollMode="never"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

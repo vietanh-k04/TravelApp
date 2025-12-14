@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.travelappandroid.NavGraphDirections
-import com.example.travelappandroid.data.model.RegionItem
 import com.example.travelappandroid.databinding.FragmentHomeBinding
 import com.example.travelappandroid.ui.components.BannerSlider
 import com.example.travelappandroid.ui.components.RecommendAdapter
@@ -30,8 +30,6 @@ class HomeFragment : Fragment() {
     private lateinit var recommendAdapter: RecommendAdapter
 
     private lateinit var trendingAdapter: TrendingAdapter
-
-
 
     private lateinit var foodAdapter: FoodAdapter
 
@@ -61,6 +59,8 @@ class HomeFragment : Fragment() {
         observeItinerary()
 
         registerOnPage()
+
+        setUpQuickExplore()
     }
 
     override fun onPause() {
@@ -79,7 +79,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpAdapter() {
-        bannerAdapter = BannerAdapter()
+        bannerAdapter = BannerAdapter { placeId ->
+            navigateToPlaceDetail(placeId)
+        }
+
         binding.homeBanner.bannerViewPager.adapter = bannerAdapter
         binding.homeBanner.bannerIndicator.attachTo(binding.homeBanner.bannerViewPager)
 
@@ -155,4 +158,29 @@ class HomeFragment : Fragment() {
         val action = NavGraphDirections.actionGlobalPlaceDetailFragment(placeId)
         findNavController().navigate(action)
     }
+
+    private fun setUpQuickExplore() {
+        binding.homeQuickExplore.chipGroupQuickExplore.setOnCheckedStateChangeListener { group, checkedIds ->
+            if (checkedIds.isNotEmpty()) {
+                val chipId = checkedIds[0]
+                val chip = group.findViewById<com.google.android.material.chip.Chip>(chipId)
+                val locationName = chip.text.toString()
+                val action = HomeFragmentDirections.actionHomeFragmentToLocationDetailFragment(locationName)
+                findNavController().navigate(action)
+                group.clearCheck()
+            }
+        }
+    }
+
+    private fun navigateToPlaceDetail(placeId: String) {
+        val allPlaces = viewModel.places.value
+        val selectedPlace = allPlaces?.find { it.id == placeId }
+        if (selectedPlace != null) {
+            val action = HomeFragmentDirections.actionGlobalPlaceDetailFragment(selectedPlace.id)
+            findNavController().navigate(action)
+        } else {
+            Toast.makeText(context, "Đang tải dữ liệu, vui lòng thử lại sau!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

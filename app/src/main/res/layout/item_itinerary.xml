@@ -2,11 +2,14 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="260dp"
-    android:layout_height="170dp"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="18dp"
-    app:cardElevation="8dp">
+    android:layout_width="@dimen/_260sdp"
+    android:layout_height="@dimen/_170sdp"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_18sdp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardElevation="@dimen/_8sdp">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -25,7 +28,7 @@
         <!-- Overlay mờ -->
         <View
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_gravity="bottom"
             android:background="@drawable/bg_itinerary_overlay" />
 
@@ -35,14 +38,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="@dimen/_12sdp">
 
             <TextView
                 android:id="@+id/tvItineraryName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
-                android:textSize="17sp"
+                android:textSize="@dimen/_17ssp"
                 android:textStyle="bold"
                 android:maxLines="1"
                 android:ellipsize="end" />
@@ -52,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#E0FFFFFF"
-                android:textSize="14sp"
+                android:textSize="@dimen/_14ssp"
                 android:maxLines="2"
                 android:ellipsize="end" />
         </LinearLayout>

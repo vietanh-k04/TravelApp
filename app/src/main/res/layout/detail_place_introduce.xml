@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:text="@string/detail_hint_time_open"
             android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:textSize="@dimen/_13ssp"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -25,9 +25,9 @@
             tools:text="08:00 - 17:00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="@dimen/_16ssp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="@string/detail_hint_ticket_price"
             android:textColor="@color/gray"
-            android:textSize="13sp"
+            android:textSize="@dimen/_13ssp"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -50,9 +50,9 @@
             tools:text="Miễn phí"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:textColor="@color/primary"
-            android:textSize="16sp"
+            android:textSize="@dimen/_16ssp"
             android:textStyle="bold" />
     </LinearLayout>
 

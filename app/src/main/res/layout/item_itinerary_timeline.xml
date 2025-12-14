@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:clickable="true"
+    android:focusable="true"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tvOrder"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
         android:background="@drawable/bg_circle_primary"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="@dimen/_12ssp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,7 +23,7 @@
 
     <View
         android:id="@+id/viewLine"
-        android:layout_width="2dp"
+        android:layout_width="@dimen/_2sdp"
         android:layout_height="0dp"
         android:background="#DDDDDD"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,10 +35,10 @@
         android:id="@+id/cardPlace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="24dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="2dp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvOrder"
@@ -49,8 +51,8 @@
 
             <ImageView
                 android:id="@+id/imgPlaceThumb"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
                 android:importantForAccessibility="no"
                 android:scaleType="centerCrop"
                 tools:ignore="ImageContrastCheck"
@@ -60,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="@dimen/_10sdp">
 
                 <TextView
                     android:id="@+id/tvPlaceName"
@@ -69,7 +71,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/_16ssp"
                     android:textStyle="bold"
                     tools:text="Vịnh Hạ Long" />
 
@@ -77,9 +79,9 @@
                     android:id="@+id/tvPlaceCat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="@dimen/_4sdp"
                     android:textColor="@color/gray"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/_13ssp"
                     tools:ignore="TextContrastCheck"
                     tools:text="Danh lam thắng cảnh" />
 
@@ -87,9 +89,9 @@
                     android:id="@+id/tvRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="@dimen/_4sdp"
                     android:textColor="#FFC107"
-                    android:textSize="12sp"
+                    android:textSize="@dimen/_12ssp"
                     android:textStyle="bold"
                     tools:ignore="TextContrastCheck"
                     tools:text="4.8 ★" />

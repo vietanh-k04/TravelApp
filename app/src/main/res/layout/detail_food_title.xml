@@ -10,23 +10,23 @@
         android:layout_height="wrap_content"
         tools:text="Phở Bò Hà Nội"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="@dimen/_28ssp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvFoodProvince"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/_8sdp"
         tools:text="Đặc sản: Hà Nội"
         android:textColor="@color/primary"
         android:textStyle="bold"
-        android:textSize="16sp"
+        android:textSize="@dimen/_16ssp"
         android:background="@drawable/bg_search_plan"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"/>
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_6sdp"/>
 
     <include layout="@layout/divider" />
 

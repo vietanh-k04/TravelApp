@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TravelApp (Android)</string>
+    <string name="app_name">Ứng dụng du lịch</string>
     <string name="home_hint_welcome">Khám phá Việt Nam</string>
     <string name="home_hint_description">Những nơi tuyệt vời dành cho bạn</string>
     <string name="home_hint_trending_places">Đang thịnh hành</string>
@@ -14,9 +14,9 @@
     <string name="home_hind_food">Khám phá ẩm thực</string>
     <string name="food_hint_kham_pha_am_thuc">Khám phá Ẩm thực Việt Nam</string>
     <string name="hint_food_search">Tìm món ăn…</string>
-    <string name="itinerary_hint_title">Kế hoạch du lịch</string>
+    <string name="itinerary_hint_title">Lên kế hoạch\nChuyến đi của bạn</string>
     <string name="itinerary_hint_search">Tìm kế hoạch du lịch…</string>
-    <string name="explore_hint_title">Khám phá thế giới mới</string>
+    <string name="explore_hint_title">Khám phá\nThế giới mới</string>
     <string name="explore_hint_see_all">Xem tất cả</string>
     <string name="explore_hint_search">Nhập tên địa điểm…</string>
     <string name="explore_hint_danh_muc">Danh mục</string>
@@ -31,7 +31,6 @@
     <string name="detail_hint_picture">Thư viện ảnh</string>
     <string name="detail_hint_save">Lưu địa điểm</string>
     <string name="detail_hint_tip"><![CDATA[Mẹo nhỏ & Lưu ý]]></string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="detail_hint_eat">Ăn ở đâu ngon?</string>
     <string name="detail_hint_journey">Giới thiệu hành trình</string>
@@ -39,4 +38,17 @@
     <string name="local_hint_places">Địa điểm nổi bật</string>
     <string name="local_hint_foods">Ẩm thực đặc sắc</string>
     <string name="local_hint_itinerary">Lịch trình gợi ý</string>
+    <string name="home_hint_chip_HN">Hà Nội</string>
+    <string name="home_hint_chip_DN">Đà Nẵng</string>
+    <string name="home_hint_chip_H">Huế</string>
+    <string name="home_hint_chip_NB">Ninh Bình</string>
+    <string name="home_hint_chip_PQ">Phú Quốc</string>
+    <string name="home_hint_chip_HCM">Hồ Chí Minh</string>
+    <string name="food_hint_title">Tinh hoa\nẨm thực Việt</string>
+    <string name="food_hint_edt">Bạn muốn ăn gì hôm nay?</string>
+    <string name="place_hint_map">Vị trí trên bản đồ</string>
+    <string name="place_hint_direction">Chỉ đường</string>
+    <string name="splash_hint_title">Travel Việt Nam</string>
+    <string name="splash_des">Khám phá vẻ đẹp Việt Nam</string>
+    <string name="splash_version">Version 1.0.0</string>
 </resources>

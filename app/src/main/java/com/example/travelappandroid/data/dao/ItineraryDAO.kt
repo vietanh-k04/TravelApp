@@ -21,7 +21,7 @@ interface ItineraryDAO {
     @Query("SELECT * FROM itineraries WHERE nameNoAccent LIKE '%' || :keyword || '%'")
     suspend fun search(keyword: String): List<ItineraryEntity>
 
-    @Query("SELECT * FROM itineraries WHERE provinceNoAccent = :province")
+    @Query("SELECT * FROM itineraries WHERE provinceNoAccent LIKE '%' || :province || '%'")
     suspend fun getItineraryByProvince(province: String): List<ItineraryEntity>
 
     // Lấy "count" kế hoạch

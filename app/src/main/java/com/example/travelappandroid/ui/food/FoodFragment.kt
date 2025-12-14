@@ -38,18 +38,17 @@ class FoodFragment : Fragment() {
             val action = NavGraphDirections.actionGlobalFoodDetailFragment(food?.id ?: "")
             findNavController().navigate(action)
         }
-        binding.rvFoods.adapter = adapter
+        binding.foodList.rvFoods.adapter = adapter
     }
 
     fun setUpViewModel() {
         viewModel.foods.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
-        viewModel.loadFoods()
     }
 
     fun searchFood() {
-        binding.edtSearch.addTextChangedListener(object : TextWatcher {
+        binding.foodHeader.edtSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
