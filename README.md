@@ -6,9 +6,9 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 
   Banner trượt (Slider) giới thiệu các địa điểm nổi bật.
 
-  Danh sách gợi ý các điểm đến hấp dẫn (Recommend Places), các món ăn và các kế hoạch du lịch đặc sắc
+    Danh sách gợi ý các điểm đến hấp dẫn (Recommend Places), các món ăn và các kế hoạch du lịch đặc sắc
 
-  Giao diện tương thích (Responsive) với mọi kích thước màn hình nhờ thư viện SDP/SSP.
+    Giao diện tương thích (Responsive) với mọi kích thước màn hình nhờ thư viện SDP/SSP.
 
 📍 Chi tiết địa điểm (Location Detail):
 
