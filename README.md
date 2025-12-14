@@ -103,7 +103,7 @@ com.example.travelappandroid
 <img src="screenshot/detail_food.png" width="200">
 <img src="screenshot/detail_plan.png" width="200">
 
-👨‍💻 Tác giả (Author)
+👨‍💻 Tác giả (Author)                
 Họ và tên: [Nguyễn Việt Anh]                
 Liên hệ: [kotenvietx72@gmail.com]                
 Dự án: Dự án cá nhân                
