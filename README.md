@@ -69,7 +69,7 @@ com.example.travelappandroid
 ├── di                    
 │   ├── Appmodule                
 │   ├── DataSourceModule     
-│   ├── MyApplication
+│   ├── MyApplication     
 │   └── RepositoryModule                       
 ├── ui                    
 │   ├── components                
@@ -92,7 +92,7 @@ com.example.travelappandroid
 │   └── repository       
 └── utils                
 📱 Screenshots
-<img src="..." width="200">
+<img src="screenshot/home_1" width="200">
 <img src="..." width="200">
 <img src="..." width="200">
 <img src="..." width="200">
