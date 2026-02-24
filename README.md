@@ -6,12 +6,14 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 * **Giao diện (UI):** XML, ViewBinding, SDP & SSP
 * **Kiến trúc:** MVVM, Single Activity Pattern
 * **Điều hướng & State:** Navigation Component, ViewModel, LiveData
+* **Bản đồ & Định vị:** OpenStreetMap
 * **Networking & Data:** Room Database, Xử lý Local/Remote Data
 * **Media & Animation:** Glide, Lottie
 * **Dependency Injection:** Hilt
 
 ✨ Chức năng & Hướng xử lý
 * **Trang chủ & Gợi ý thông minh:** Hiển thị banner trượt và danh sách địa điểm, món ăn, kế hoạch du lịch nổi bật
+* **Bản đồ trực quan:** Tích hợp bản đồ mã nguồn mở hiển thị tọa độ các địa điểm du lịch
 * **Chi tiết địa điểm & Tích hợp:** Cung cấp thông tin chi tiết về điểm đến, đồng thời gợi ý ẩm thực và lịch trình đi kèm
 * **Khám phá & Truy cập nhanh:** Tra cứu và tìm kiếm nhanh các địa điểm theo danh mục hoặc từ khóa
 * **Màn hình mở đầu:** Màn hình Splash Screen mở đầu ấn tượng
