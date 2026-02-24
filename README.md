@@ -14,6 +14,7 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 * **Trang chủ & Gợi ý thông minh:** Hiển thị banner trượt và danh sách địa điểm, món ăn, kế hoạch du lịch nổi bật
 * **Chi tiết địa điểm & Tích hợp:** Cung cấp thông tin chi tiết về điểm đến, đồng thời gợi ý ẩm thực và lịch trình đi kèm
 * **Khám phá & Truy cập nhanh:** Tra cứu và tìm kiếm nhanh các địa điểm theo danh mục hoặc từ khóa
+* **Màn hình mở đầu:** Màn hình Splash Screen mở đầu ấn tượng
 
 📱 Demo Dự Án
 <p align="center">
