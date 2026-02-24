@@ -22,7 +22,6 @@ class GalleryAdapter(
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
         val imageUrl = images[position]
 
-        // Load ảnh bằng Glide
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .centerCrop()
@@ -30,7 +29,6 @@ class GalleryAdapter(
             .error(R.drawable.ic_launcher_background)
             .into(holder.binding.imgGalleryThumb)
 
-        // Sự kiện click (nếu cần xem ảnh to sau này)
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(imageUrl)
         }

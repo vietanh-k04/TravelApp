@@ -41,7 +41,6 @@ class PlaceStaggeredAdapter(
                 tvExploreName.text = "${item.name} • ${item.rating ?: 0}"
                 tvExploreLocation.text = item.province
 
-                // Load ảnh bằng Glide
                 Glide.with(imgExploreThumb.context)
                     .load(item.thumbnail)
                     .override(600, 800)

@@ -125,7 +125,6 @@ class PlaceDetailFragment : Fragment() {
     }
 
     private fun setupMap(place: Place) {
-        // 1. Hiện khung map
         binding.detailPlaceMap.root.visibility = View.VISIBLE
         val mapView = binding.detailPlaceMap.mapView
 
