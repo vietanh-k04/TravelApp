@@ -11,7 +11,7 @@ Travel Việt Nam là ứng dụng hỗ trợ khách du lịch tra cứu thông
 * **Media & Animation:** Glide, Lottie
 * **Dependency Injection:** Hilt
 
-✨ Chức năng & Hướng xử lý
+✨ Chức năng
 * **Trang chủ & Gợi ý thông minh:** Hiển thị banner trượt và danh sách địa điểm, món ăn, kế hoạch du lịch nổi bật
 * **Bản đồ trực quan:** Tích hợp bản đồ mã nguồn mở hiển thị tọa độ các địa điểm du lịch
 * **Chi tiết địa điểm & Tích hợp:** Cung cấp thông tin chi tiết về điểm đến, đồng thời gợi ý ẩm thực và lịch trình đi kèm
